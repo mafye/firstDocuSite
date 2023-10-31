@@ -13,7 +13,7 @@ Use this awesome feature option
 
 :::
 
-:::danger Take care
+:::danger Be careful!
 
 This action is dangerous
 
