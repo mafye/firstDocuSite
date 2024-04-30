@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 创建一个文档
+# 我们来创建一个文档吧
 
 Documents are **groups of pages** connected through:
 
