@@ -53,9 +53,7 @@ export default function AIAssistant() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey.trim()}`,
-          'HTTP-Referer': window.location.origin,
-          'X-Title': '葫芦学堂'
+          'Authorization': `Bearer ${apiKey.trim()}`
         },
         body: JSON.stringify({
           model: model,
