@@ -1,0 +1,33 @@
+.notFoundContainer {
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.notFoundTitle {
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.notFoundSubtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.notFoundText {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.notFoundButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+} 

@@ -30,6 +30,12 @@ const config = {
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
+    localeConfigs: {
+      'zh-Hans': {
+        label: '简体中文',
+        direction: 'ltr',
+      },
+    },
   },
 
   presets: [
