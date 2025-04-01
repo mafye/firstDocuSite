@@ -85,6 +85,7 @@ const config = {
           {to: '/blog', label: '学习博客', position: 'left'},
           {to: '/about', label: '关于我们', position: 'left'},
           {to: '/contact', label: '联系我们', position: 'left'},
+          {to: '/ai-tools', label: 'AI 学习工具', position: 'left'},
           {
             href: 'https://github.com/mafye/firstDocuSite',
             label: 'GitHub',
