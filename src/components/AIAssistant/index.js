@@ -15,7 +15,7 @@ export default function AIAssistant() {
   const messagesEndRef = useRef(null);
 
   const { siteConfig } = useDocusaurusContext();
-  const apiKey = siteConfig.customFields.openrouterApiKey;
+  const apiKey = siteConfig.customFields.openrouterApiKey || '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';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -70,8 +70,11 @@ export default function AIAssistant() {
         }]);
         console.error('API 响应错误:', data);
       }
+
+      console.log('使用的 API Key:', apiKey ? apiKey.substring(0, 10) + '...' : '未设置');
     } catch (error) {
       console.error('请求错误:', error);
+      console.error('请求错误详情:', error.message, error.stack);
       setMessages(prev => [...prev, { 
         role: 'assistant', 
         content: '抱歉，发生了网络错误。请检查您的网络连接并重试。' 
