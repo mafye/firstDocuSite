@@ -15,7 +15,7 @@ export default function AIAssistant() {
   const messagesEndRef = useRef(null);
 
   const { siteConfig } = useDocusaurusContext();
-  const apiKey = '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';
+  const apiKey = '您的新API密钥';  // 更新为您新申请的密钥
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -45,13 +45,17 @@ export default function AIAssistant() {
 
       // 在 fetch 调用前添加
       console.log('使用的 API 密钥:', apiKey ? `${apiKey.substring(0, 10)}...` : '未设置');
+      console.log('请求模型:', model);
+      console.log('请求消息:', apiMessages);
 
       // 调用 OpenRouter API
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey.trim()}`
+          'Authorization': `Bearer ${apiKey.trim()}`,
+          'HTTP-Referer': window.location.origin,
+          'X-Title': '葫芦学堂'
         },
         body: JSON.stringify({
           model: model,
@@ -82,6 +86,8 @@ export default function AIAssistant() {
       }
 
       console.log('使用的 API Key:', apiKey ? apiKey.substring(0, 10) + '...' : '未设置');
+      console.log('API 响应状态:', response.status);
+      console.log('API 响应头:', Object.fromEntries([...response.headers]));
     } catch (error) {
       console.error('请求错误:', error);
       console.error('请求错误详情:', error.message, error.stack);
