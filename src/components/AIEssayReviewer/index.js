@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function AIEssayReviewer() {
   const [essay, setEssay] = useState('');
@@ -8,6 +9,9 @@ export default function AIEssayReviewer() {
   const [model, setModel] = useState('deepseek/deepseek-chat-v3-0324:free');
   const [essayType, setEssayType] = useState('narrative');
   const [grade, setGrade] = useState('middle');
+  
+  const { siteConfig } = useDocusaurusContext();
+  const apiKey = siteConfig.customFields.openrouterApiKey;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +42,7 @@ ${essay}
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`
+          'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
           model: model,
