@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Documentation Site',
-  tagline: 'Comprehensive guides and documentation for your success',
+  title: '葫芦学堂',
+  tagline: '知识的殿堂，智慧的源泉',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -28,8 +28,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
@@ -64,9 +64,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Documentation',
+        title: '葫芦学堂',
         logo: {
-          alt: 'My Site Logo',
+          alt: '葫芦学堂 Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -74,9 +74,11 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Documentation',
+            label: '课程文档',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: '学习博客', position: 'left'},
+          {to: '/about', label: '关于我们', position: 'left'},
+          {to: '/contact', label: '联系我们', position: 'left'},
           {
             href: 'https://github.com/mafye/firstDocuSite',
             label: 'GitHub',
@@ -88,50 +90,58 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: '学习资源',
             items: [
               {
-                label: 'Introduction',
+                label: '课程介绍',
                 to: '/docs/intro',
               },
               {
-                label: 'Getting Started',
+                label: '入门指南',
                 to: '/docs/category/getting-started',
               },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: '常见问题',
+                to: '/docs/faq',
               },
             ],
           },
           {
-            title: 'More',
+            title: '社区',
             items: [
               {
-                label: 'Blog',
+                label: '学习论坛',
+                href: 'https://example.com/forum',
+              },
+              {
+                label: '微信公众号',
+                href: 'https://example.com/wechat',
+              },
+              {
+                label: '知乎专栏',
+                href: 'https://zhihu.com',
+              },
+            ],
+          },
+          {
+            title: '更多',
+            items: [
+              {
+                label: '学习博客',
                 to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/mafye/firstDocuSite',
+                label: '关于我们',
+                to: '/about',
+              },
+              {
+                label: '加入我们',
+                to: '/join',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Documentation Site. Built with Docusaurus.`,
+        copyright: `版权所有 © ${new Date().getFullYear()} 葫芦学堂. 基于 Docusaurus 构建.`,
       },
       prism: {
         theme: lightCodeTheme,

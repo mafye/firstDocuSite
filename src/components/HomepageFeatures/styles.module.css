@@ -5,6 +5,13 @@
   width: 100%;
 }
 
+.featuresTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: #333;
+}
+
 .featureSvg {
   height: 200px;
   width: 200px;
@@ -17,6 +24,8 @@
   padding: 2rem;
   border-radius: 8px;
   transition: all 0.3s ease;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .featureCard:hover {
@@ -26,4 +35,9 @@
 
 .featureCard:hover .featureSvg {
   transform: scale(1.05);
+}
+
+.featureCard h3 {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
 }
