@@ -21,7 +21,7 @@ const config = {
   organizationName: 'mafye', // Usually your GitHub org/user name.
   projectName: 'firstDocuSite', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -104,11 +104,11 @@ const config = {
               },
               {
                 label: '入门指南',
-                to: '/docs/category/getting-started',
+                to: '/docs/intro',
               },
               {
                 label: '常见问题',
-                to: '/docs/faq',
+                to: '/docs/intro',
               },
             ],
           },

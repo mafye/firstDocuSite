@@ -48,7 +48,7 @@ export default function Home() {
               <div className={styles.callToAction}>
                 <Link
                   className="button button--primary button--lg"
-                  to="/docs/category/getting-started">
+                  to="/docs/intro">
                   探索课程内容
                 </Link>
               </div>
@@ -91,7 +91,7 @@ export default function Home() {
                     <p>"葫芦学堂的课程设计非常合理，让我能够轻松掌握知识点，学习效果显著提升。"</p>
                   </div>
                   <div className={styles.testimonialAuthor}>
-                    <img src="/img/testimonial1.jpg" alt="学员照片" className={styles.testimonialAvatar} />
+                    <img src="/img/docusaurus.png" alt="学员照片" className={styles.testimonialAvatar} />
                     <div>
                       <h4>张明</h4>
                       <p>高中生</p>
@@ -103,7 +103,7 @@ export default function Home() {
                     <p>"作为一名在职人士，葫芦学堂的灵活学习模式非常适合我，让我能够在工作之余持续提升自己。"</p>
                   </div>
                   <div className={styles.testimonialAuthor}>
-                    <img src="/img/testimonial2.jpg" alt="学员照片" className={styles.testimonialAvatar} />
+                    <img src="/img/docusaurus.png" alt="学员照片" className={styles.testimonialAvatar} />
                     <div>
                       <h4>李华</h4>
                       <p>IT工程师</p>

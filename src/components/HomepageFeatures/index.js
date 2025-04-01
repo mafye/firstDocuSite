@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '专业教学团队',
-    imageSrc: '/img/feature1.png', // 替换为您的图片路径
+    imageSrc: '/img/docusaurus.png', // 使用 Docusaurus 默认图片
     description: (
       <>
         葫芦学堂拥有一支经验丰富的教师团队，他们不仅具备扎实的专业知识，
@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: '科学的课程体系',
-    imageSrc: '/img/feature2.png', // 替换为您的图片路径
+    imageSrc: '/img/docusaurus.png', // 使用 Docusaurus 默认图片
     description: (
       <>
         我们的课程体系经过精心设计，从基础到进阶，层层递进，
@@ -26,7 +26,7 @@ const FeatureList = [
   },
   {
     title: '互动学习体验',
-    imageSrc: '/img/feature3.png', // 替换为您的图片路径
+    imageSrc: '/img/docusaurus.png', // 使用 Docusaurus 默认图片
     description: (
       <>
         葫芦学堂注重互动教学，通过丰富多样的教学活动和实践项目，
