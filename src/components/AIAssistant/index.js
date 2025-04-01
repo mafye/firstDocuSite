@@ -15,7 +15,11 @@ export default function AIAssistant() {
   const messagesEndRef = useRef(null);
 
   const { siteConfig } = useDocusaurusContext();
-  const apiKey = '您的新API密钥';  // 更新为您新申请的密钥
+  // 从环境变量获取 API 密钥，提供 ASCII 字符的备用值
+  const apiKey = siteConfig.customFields.openrouterApiKey || 'default-key';
+
+  // 添加调试日志
+  console.log('API 密钥设置状态:', apiKey ? '已设置' : '未设置');
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });

@@ -11,7 +11,8 @@ export default function AIEssayReviewer() {
   const [grade, setGrade] = useState('middle');
   
   const { siteConfig } = useDocusaurusContext();
-  const apiKey = '您的新API密钥';  // 更新为您新申请的密钥
+  // 从环境变量获取 API 密钥，提供 ASCII 字符的备用值
+  const apiKey = siteConfig.customFields.openrouterApiKey || 'default-key';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
