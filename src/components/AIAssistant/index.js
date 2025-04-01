@@ -15,7 +15,7 @@ export default function AIAssistant() {
   const messagesEndRef = useRef(null);
 
   const { siteConfig } = useDocusaurusContext();
-  const apiKey = siteConfig.customFields.openrouterApiKey || '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';
+  const apiKey = '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';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -43,12 +43,15 @@ export default function AIAssistant() {
       }));
       apiMessages.push(userMessage);
 
+      // 在 fetch 调用前添加
+      console.log('使用的 API 密钥:', apiKey ? `${apiKey.substring(0, 10)}...` : '未设置');
+
       // 调用 OpenRouter API
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
+          'Authorization': `Bearer ${apiKey.trim()}`
         },
         body: JSON.stringify({
           model: model,
@@ -56,6 +59,13 @@ export default function AIAssistant() {
           max_tokens: 1000
         })
       });
+
+      // 检查响应状态
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`API 响应错误 (${response.status}):`, errorText);
+        throw new Error(`API 请求失败: ${response.status} ${response.statusText}`);
+      }
 
       const data = await response.json();
       
