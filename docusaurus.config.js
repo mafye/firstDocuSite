@@ -155,6 +155,9 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  customFields: {
+    openrouterApiKey: process.env.OPENROUTER_API_KEY,
+  },
 };
 
 module.exports = config;

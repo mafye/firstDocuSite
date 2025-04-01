@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles.module.css';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function AIAssistant() {
   const [messages, setMessages] = useState([
@@ -12,6 +13,9 @@ export default function AIAssistant() {
   const [isLoading, setIsLoading] = useState(false);
   const [model, setModel] = useState('deepseek/deepseek-chat-v3-0324:free');
   const messagesEndRef = useRef(null);
+
+  const { siteConfig } = useDocusaurusContext();
+  const apiKey = siteConfig.customFields.openrouterApiKey;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -44,7 +48,7 @@ export default function AIAssistant() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`
+          'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
           model: model,
